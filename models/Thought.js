@@ -16,7 +16,7 @@ const thoughtSchema = new Schema({
     },
   ],
 
-  createdAt: {
+  createdAt: { 
     type: Date,
     default: Date.now,
   },
