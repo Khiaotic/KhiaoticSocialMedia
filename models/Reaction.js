@@ -1,27 +1,30 @@
 ///object destructing
-const {Schema,model}= require('mongoose')
+const { Schema, model } = require("mongoose");
 
-const Reaction = new Schema({
-    text: {
-        type: String,
-required: true,
-minlength:10,
-maxlength: 150,
-    },
- reactionBody: {
+const reactionSchema = new Schema({
+  reactionId: {
+    type: Schema.Types.ObjectId,
+    default: () => new Types.ObjectId(),
+  },
+  
+  reactionBody: {
     type: String,
     required: true,
-    maxlength: 280
- },
+    maxlength: 280,
+  },
 
- username: {
+  username: {
     type: String,
-    required: true
-},
+    required: true,
+  },
 
-createdAt: {
+  createdAt: {
     type: Date,
     default: Data.now,
-},   
+  },
+});
 
-})
+
+const  Reaction = model ("Reaction", reactionSchema);
+
+model.exports = Reaction;

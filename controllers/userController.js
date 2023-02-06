@@ -35,4 +35,52 @@ deleteUser (req, res) {
 .catch((err) => res.status(500).json(err));
 
 },
+
+addFriend(req, res) {
+    User.findOneAndUpdate (
+        {
+            _id: req.params.id,
+        },
+        {
+            $addToSet:  {
+                friends: req.params.friendId,
+            },
+        },
+        {
+            new: true,
+            runValidators: true,
+        }
+    )
+    .then((user) => {
+        if (!user){
+            res.status(404).json({message:"user not found"});
+            return;
+        }
+        res.json(user);
+    })
+    .catch((err) => res.status(500).json(err));
+},
+
+removeFriend(req, res) {
+    User.findOneAndUpdate (
+        {
+            _id: req.params.id,
+        },
+        {
+            $pull: {
+                friends: req.params.friendsId,
+            },
+        },
+        {
+            new: true,
+            runValidators: true,
+        }
+    )
+    .then((user) =>
+    !user
+    ? res.status(400).json({ message: "user not found"})
+    :res.json(user)
+    )
+    .catch((err) => res.status(500).json(err));
+},
 };

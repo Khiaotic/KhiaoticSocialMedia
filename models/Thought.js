@@ -12,7 +12,7 @@ const thoughtSchema = new Schema({
   reactions: [
     {
     type:Schema.Types.ObjectId,
-    ref: 'Reaction',
+    ref: 'reactionSchema',
     },
   ],
 
@@ -25,6 +25,19 @@ const thoughtSchema = new Schema({
     type: String,
     required: true,
   },
+  // reactions: [reactionSchema],
+},
+{
+  toJSON: {
+    virtuals: true,
+    
+  },
+  id:false,
+}
+);
+thoughtSchema.virtual("reactionCount").get(function () {
+  return this.reactions.length;
 });
+
 const Thought = model("thought", thoughtSchema);
 module.exports = Thought;
