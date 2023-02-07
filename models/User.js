@@ -50,4 +50,7 @@ uniqueUsername
     return `${this.friends}`
 });
 const User = model("user", uniqueUsername);
-module.export = User;
+
+
+
+module.exports = User;
