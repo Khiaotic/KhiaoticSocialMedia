@@ -30,6 +30,7 @@ To clone and use this application, you'll need Git and Node.js (npm equipped) in
 
 
 ## 🧰Usage
+npm i 
 node server.js
 
 ## 🏠Contributors
