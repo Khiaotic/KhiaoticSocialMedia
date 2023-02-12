@@ -8,8 +8,7 @@ module.exports = {
     },
 
     getSingleThought(req, res)  {
-        Thought.findOne({_id: req/URLSearchParams.userId})
-        .select('__V')
+        Thought.findOne({_id: req.params.id}).populate({ path:"username"})
         .then ((thought) => 
         !thought
         ? res.status(404).json({ message: 'No thought with that ID' })
@@ -21,22 +20,16 @@ module.exports = {
     ///add a thought into the user
     createThought (req, res) {
        Thought.create(req.body)
-        .then ((thought) => {
+        .then ((newThought) => {
             return User.findOneAndUpdate(
                 { _id: req.body.userId },
                 ///new id just created
-                { $push: { thoughts: thought._id} },
-                { runValidators: true, new: true }
-              )
+                { $push: { thoughts: newThought._id} },
+                { new: true }
+              );
         
-        } )
-        .then((user)=>
-        !user
-        ? res
-        .status(404)
-        .json({ message: 'No user found with that ID :(' })
-    : res.json(user)
-)
+        })
+        .then((userData) => res.json(userData))
         .catch((err) => res.status(500).json(err));
     },
 

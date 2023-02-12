@@ -29,20 +29,22 @@ const uniqueUsername = new Schema({
     },
   ],
 },
-{toJSON: {
+{
+  toJSON: {
     virtuals: true,
+    
 },
 id:false
 }
 );
 
 uniqueUsername 
-.virtual('friend')
+.virtual('friendCount')
 //Getter
 .get(function () {
-    return `${this.friends}`
+    return this.friends.length;
 });
-const User = model("user", uniqueUsername);
+const User = model("User", uniqueUsername);
 
 
 
