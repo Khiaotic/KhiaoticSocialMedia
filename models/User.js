@@ -8,12 +8,18 @@ const uniqueUsername = new Schema({
   username: {
     type: String,
     required: true,
+    unique: true,
+    trim: true,
   },
 
   email: {
     type: String,
-   
+    unique: true,
     required: true,
+    match: [
+      /^([a-z0-9_\.-]+))@([\da-z\.-]+)\.([a-z\.]{2,3})$/i,
+      "enter a valid email pal",
+    ],
   },
 
   thoughts: [
