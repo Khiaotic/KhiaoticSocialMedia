@@ -6,25 +6,42 @@ const thoughtSchema = new Schema({
     type: String,
     required: true,
     minlength: 1,
-    maxlength: 128,
+    maxlength: 280,
   },
   //QUESTION: an array of nested docs
-  reactions: [
-    {
-    type:Schema.Types.ObjectId,
-    ref: 'Reaction',
-    },
-  ],
-
+  
   createdAt: { 
     type: Date,
     default: Date.now,
   },
-
+  
   username: {
     type: String,
     required: true,
   },
+  
+  reactions: 
+  [
+    {
+    type:Schema.Types.ObjectId,
+    ref: 'reactionSchema',
+    },
+  ],
+},
+{
+  toJSON: {
+    virtuals: true,
+    getters: true,
+  },
+  id:false,
+}
+);
+thoughtSchema.virtual("reactionCount").get(function () {
+  return this.reactions.length;
 });
+
 const Thought = model("thought", thoughtSchema);
+
+
+
 module.exports = Thought;

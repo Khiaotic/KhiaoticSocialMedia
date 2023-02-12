@@ -12,14 +12,7 @@ const uniqueUsername = new Schema({
 
   email: {
     type: String,
-    /////////
-    ///QUESTION IS VALIDATOR VALIDATIN'?
-    /////////
-    // validate: {
-    //   validator: validator.isEmail,
-    //   message: "{VALUE is not a valid email",
-    //   isAsync: false,
-    // },
+   
     required: true,
   },
 
@@ -36,18 +29,23 @@ const uniqueUsername = new Schema({
     },
   ],
 },
-{toJSON: {
+{
+  toJSON: {
     virtuals: true,
+    
 },
 id:false
 }
 );
 
 uniqueUsername 
-.virtual('friend')
+.virtual('friendCount')
 //Getter
 .get(function () {
-    return `${this.friends}`
+    return this.friends.length;
 });
-const User = model("user", uniqueUsername);
-module.export = User;
+const User = model("User", uniqueUsername);
+
+
+
+module.exports = User;
