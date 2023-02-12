@@ -1,5 +1,5 @@
 ///object destructing
-//update
+
 ///schemas WILL NOT HAVE .find, .create, .use etc
 
 const { Schema, model } = require("mongoose");
@@ -54,5 +54,5 @@ uniqueUsername
 const User = model("User", uniqueUsername);
 
 
-
+//export
 module.exports = User;
