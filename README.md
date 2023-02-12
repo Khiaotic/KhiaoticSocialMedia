@@ -10,6 +10,8 @@ This application is covered by the (https://img.shields.io/badge/License-MIT-yel
 ## 👀Preview and Demo
  
 Link to Demo: https://clipchamp.com/watch/Qqs0Me4o0fK
+![allusers](https://user-images.githubusercontent.com/112679225/218309716-c01435ee-14a0-4955-89bd-784ceba8a40e.jpg)
+![yeeted screenshot](https://user-images.githubusercontent.com/112679225/218309718-2963aa52-d6a2-4527-9458-3954d3325508.jpg)
 
 
 ## 📋Table of Contents
