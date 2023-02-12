@@ -12,14 +12,7 @@ const uniqueUsername = new Schema({
 
   email: {
     type: String,
-    /////////
-    ///QUESTION IS VALIDATOR VALIDATIN'?
-    /////////
-    // validate: {
-    //   validator: validator.isEmail,
-    //   message: "{VALUE is not a valid email",
-    //   isAsync: false,
-    // },
+   
     required: true,
   },
 

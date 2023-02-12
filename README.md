@@ -1,7 +1,7 @@
 # KhiaoticSocialMedia
 
 ## ✨Overview (description)✨
-<h3 align="center">a social media platform that works like a social medias platform</h3>
+<h3 align="center">a social media platform that works like a social media platform except no pictures really </h3>
 
 ## 🪪License
 This application is covered by the (https://img.shields.io/badge/License-MIT-yellow)
@@ -40,7 +40,7 @@ Are tests included in this application?: N/A
 ## 🤔Questions
 Find me on Github: https://github.com/Khiaotic <br />
 <br />
-If you have any further questions or concerns please contact me through email: KhisFakeEmail@gmail.com or GitHub
+If you have any further questions or concerns please contact me through email: N/A or GitHub
 
 ## 🪙Support
 This is FREE, OPEN-SOURCE software. <br />

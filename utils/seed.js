@@ -12,9 +12,7 @@ connection.once("open", async () => {
   //add users to the collection and await the results
   await User.collection.insertMany(users);
 
-  ///////////////////////////
-  ///QUESTIONssssss////
-  //add thoughts to collection and await the results
+ 
 
   await Thought.collection.insertMany(thoughts)({
     user: [...users],
