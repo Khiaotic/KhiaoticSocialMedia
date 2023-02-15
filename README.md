@@ -6,7 +6,8 @@
 ## 🪪License
 This application is covered by the (https://img.shields.io/badge/License-MIT-yellow)
 ![GitLicense](https://img.shields.io/badge/License-MIT-yellow)
-
+## User Story
+i want to be able to make a user, create and delete thoughts and add friends on the simple social media app
 ## 👀Preview and Demo
  
 Link to Demo: https://clipchamp.com/watch/Qqs0Me4o0fK
